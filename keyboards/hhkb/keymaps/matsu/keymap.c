@@ -8,7 +8,7 @@
 enum keymap_layout {
     BASE = 0,
     PSEUDO_US,
-    DVORAK,
+    MAC,
     MOUSE,
     TENKEY,
     HHKB,
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC, KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
          OSM(MOD_LSFT),KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
-                               KC_LALT,KC_LGUI,                KC_FN2,                 KC_RGUI,KC_RALT),
+                               KC_FN3, KC_LGUI,                KC_FN2,                 KC_RGUI,KC_FN4),
 
     /* Layer 1: Pseudo US Layout Layer */
     [PSEUDO_US] =
@@ -43,27 +43,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TAB, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_BSPC, \
                KC_LCTL,KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_ENT, \
          OSM(MOD_LSFT),KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_RSFT,KC_FN0, \
-                               KC_LGUI,KC_FN3,                 KC_FN2,                 KC_FN4 ,KC_RGUI),
+                               KC_FN3, KC_LGUI,                KC_FN2,                 KC_RGUI,KC_FN4),
 
-    /* Layer 2: Dvorak Layer
-     * ,-----------------------------------------------------------------------------------------.
-     * | Esc |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  [  |  ]  |  `  | BSp |
-     * |-----------------------------------------------------------------------------------------|
-     * |  Tab   |  '  |  ,  |  .  |  P  |  Y  |  F  |  G  |  C  |  R  |  L  |  /  |  =  |   \    |
-     * |-----------------------------------------------------------------------------------------|
-     * | Control  |  A  |  O  |  E  |  U  |  I  |  D  |  H  |  T  |  N  |  S  |  -  |   Enter    |
-     * |-----------------------------------------------------------------------------------------|
-     * |    Shift    |  ;  |  Q  |  J  |  K  |  X  |  B  |  M  |  W  |  V  |  Z  |  Shift  | Fn0 |
-     * `-----------------------------------------------------------------------------------------'
-     *           |LAlt |  LGui  |              SpaceFN              |  RGui  |RAlt |
-     *           `-----------------------------------------------------------------'
-     */
-    [DVORAK] =
-        KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_LBRC,KC_RBRC,KC_GRV, KC_BSPC, \
-               KC_TAB, KC_QUOT,KC_COMM,KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,   KC_C,   KC_R,   KC_L,   KC_SLSH,KC_EQL, KC_BSLS, \
-               KC_LCTL,KC_A,   KC_O,   KC_E,   KC_U,   KC_I,   KC_D,   KC_H,   KC_T,   KC_N,   KC_S,   KC_MINS,KC_ENT, \
-               KC_LSFT,KC_SCLN,KC_Q,   KC_J,   KC_K,   KC_X,   KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,   KC_RSFT,KC_FN0, \
-                               KC_LALT,KC_LGUI,                KC_FN2,                 KC_RGUI,KC_RALT),
+    /* Layer 2: Mac Layer */
+    [MAC] =
+        KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_GRV, KC_BSLS, \
+               KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC, KC_BSPC, \
+               KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
+         OSM(MOD_LSFT),KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
+                               KC_FN5, KC_LGUI,                KC_FN2,                 KC_RGUI,KC_FN6),
 
     /* Layer 3: Mouse layer
      * ,-----------------------------------------------------------------------------------------.
@@ -109,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------------.
      * | Pwr | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins | Del |
      * |-----------------------------------------------------------------------------------------|
-     * |  Caps  | Fn5 | Fn6 | Fn7 | Fn8 | Fn9 |     |     | Psc | Slk | Pus | Up  |     |  BSp   |
+     * |  Caps  | Fn7 | Fn8 | Fn9 | Fn10| Fn11|     |     | Psc | Slk | Pus | Up  |     |  BSp   |
      * |-----------------------------------------------------------------------------------------|
      * |          | VoD | VoU | Mut |     |     |  *  |  /  | Hom | PgU | Lef | Rig |   Enter    |
      * |-----------------------------------------------------------------------------------------|
@@ -120,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [HHKB] =
         KEYMAP(KC_PWR, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL, \
-               KC_CAPS,KC_FN5, KC_FN6, KC_FN7, KC_FN8, KC_FN9, KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,KC_BSPC, \
+               KC_CAPS,KC_FN7, KC_FN8, KC_FN9, KC_FN10, KC_FN11, KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCK,KC_PAUS,KC_UP,  KC_TRNS,KC_BSPC, \
                KC_TRNS,KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_PAST,KC_PSLS,KC_HOME,KC_PGUP,KC_LEFT,KC_RGHT,KC_PENT, \
                KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PPLS,KC_PMNS,KC_END, KC_PGDN,KC_DOWN,KC_TRNS,KC_TRNS, \
                                KC_TRNS,KC_TRNS,                KC_TRNS,                KC_TRNS,KC_TRNS),
@@ -170,10 +158,12 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_FUNCTION(PSEUDO_US_FUNCTION),
     [2] = ACTION_LAYER_TAP_KEY(SPACE_FN, KC_SPACE),
     [3] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_MHEN),
-    [4] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_KANA),
-    [5] = ACTION_DEFAULT_LAYER_SET(BASE),
-    [6] = ACTION_DEFAULT_LAYER_SET(PSEUDO_US),
-    [7] = ACTION_DEFAULT_LAYER_SET(MOUSE),
-    [8] = ACTION_DEFAULT_LAYER_SET(TENKEY),
-    [9] = ACTION_DEFAULT_LAYER_SET(DVORAK),
+    [4] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_HENK),
+    [5] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_LANG2),
+    [6] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_LANG1),
+    [7] = ACTION_DEFAULT_LAYER_SET(BASE),
+    [8] = ACTION_DEFAULT_LAYER_SET(PSEUDO_US),
+    [9] = ACTION_DEFAULT_LAYER_SET(MAC),
+    [10] = ACTION_DEFAULT_LAYER_SET(MOUSE),
+    [11] = ACTION_DEFAULT_LAYER_SET(TENKEY),
 };

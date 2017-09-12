@@ -1,8 +1,8 @@
-# Shela's HHKB Layout
+# Matsuzaka's HHKB Layout
 
 Layer 0: US Layout  
 Layer 1: Pseudo US Layout  
-Layer 2: Dvorak Layout  
+Layer 2: Mac Layout  
 Layer 3: Mouse  
 Layer 4: Tenkey  
 Layer 5: HHKB Fn Key  
