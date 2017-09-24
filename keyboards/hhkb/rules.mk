@@ -64,7 +64,7 @@ OPT_DEFS += -DBOOTLOADER_SIZE=4096
 # make hhkb-keymap-clean
 # make hhkb-keymap-dfu HHKB_RN42_ENABLE=yes
 
-#HHKB_RN42_ENABLE = yes
+HHKB_RN42_ENABLE = yes
 
 ifeq ($(strip $(HHKB_RN42_ENABLE)), yes)
 
