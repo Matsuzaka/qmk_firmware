@@ -55,10 +55,40 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 # as per original hasu settings
 OPT_DEFS += -DBOOTLOADER_SIZE=4096
 
+# XXX: enable support for hasu's BT alt controller -- code borrowed from tmk source tree.
+
+# either uncomment the HHKB_RN42_ENABLE line below, or run make enabling the
+# feature. Be sure to clean any existing build before trying to enable rn42
+# support. For example:
+#
+# make hhkb-keymap-clean
+# make hhkb-keymap-dfu HHKB_RN42_ENABLE=yes
+
+HHKB_RN42_ENABLE = yes
+
+ifeq ($(strip $(HHKB_RN42_ENABLE)), yes)
+
+OPT_DEFS += -DHHKB_RN42_ENABLE
+
+# Support for the RN42 Bluetooth module. This is the BT module in Hasu's BT
+# HHKB Alt controller.
+RN42_DIR = rn42
+
+SRC +=  serial_uart.c \
+	rn42/suart.S \
+	rn42/rn42.c \
+	rn42/rn42_task.c \
+	rn42/battery.c \
+	rn42/main.c
+
+VPATH += $(RN42_DIR)
+
+endif
+
 # Build Options
 #   comment out to disable the options.
 #
-BOOTMAGIC_ENABLE = yes # Virtual DIP switch configuration(+1000)
+#BOOTMAGIC_ENABLE = yes # Virtual DIP switch configuration(+1000)
 MOUSEKEY_ENABLE = yes  # Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes  # Audio control and System control(+450)
 CONSOLE_ENABLE = yes   # Console for debug(+400)
