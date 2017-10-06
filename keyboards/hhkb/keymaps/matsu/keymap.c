@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC, KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
          OSM(MOD_LSFT),KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
-                               KC_FN3, KC_LGUI,                KC_FN2,                 KC_RCTL,KC_FN4),
+                               KC_LALT, KC_LGUI,                KC_FN2,                 KC_RCTL,KC_RALT),
 
     /* Layer 1: Pseudo US Layout Layer */
     [PSEUDO_US] =
@@ -127,10 +127,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *           `-----------------------------------------------------------------'
      */
     [SPACE_FN] =
-        KEYMAP(KC_F1,   KC_GRV,KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS,  KC_NO, \
+        KEYMAP(KC_GRV, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS,  KC_NO, \
                KC_TRNS,KC_END, KC_UP,  KC_HOME,KC_NO,  KC_NO,  KC_NO,  KC_HOME,KC_UP,  KC_END, KC_PSCR,KC_SLCK,KC_PAUS,KC_DEL, \
                KC_TRNS,KC_LEFT,KC_DOWN,KC_RGHT,KC_PGUP,KC_NO,  KC_PGUP,KC_LEFT,KC_DOWN,KC_RGHT,KC_NO,  KC_NO,  KC_TRNS, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_PGDN,KC_NO,  KC_SPC, KC_PGDN,KC_TILD, KC_GRV,KC_NO,  KC_NO,  KC_TRNS,KC_NO, \
+               KC_TRNS,KC_NO,  KC_NO,  KC_PGDN,KC_NO,  KC_SPC, KC_PGDN,KC_GRV, KC_TILD, KC_NO,  KC_NO,  KC_TRNS,KC_NO, \
                                KC_TRNS,KC_TRNS,                KC_TRNS,                KC_TRNS,KC_TRNS),
 };
 
