@@ -34,24 +34,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC, KC_BSPC, \
                KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
-         OSM(MOD_LSFT),KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
-                               KC_FN3, KC_LGUI,                KC_FN2,                 KC_RCTL,KC_FN4),
+               KC_FN3, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_FN4, KC_FN0, \
+                               KC_LALT,KC_LGUI,                KC_FN2,                 KC_RCTL,KC_RALT),
 
     /* Layer 1: Pseudo US Layout Layer */
     [PSEUDO_US] =
         KEYMAP(KC_ESC, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, \
                KC_TAB, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_BSPC, \
                KC_LCTL,KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_ENT, \
-         OSM(MOD_LSFT),KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_RSFT,KC_FN0, \
-                               KC_FN3, KC_LGUI,                KC_FN2,                 KC_RCTL,KC_FN4),
+               KC_FN3, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN1, KC_FN4, KC_FN0, \
+                               KC_LALT,KC_LGUI,                KC_FN2,                 KC_RCTL,KC_RALT),
 
     /* Layer 2: Mac Layer */
     [MAC] =
         KEYMAP(KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS, KC_GRV, \
                KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC, KC_BSPC, \
                KC_LGUI,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT, \
-         OSM(MOD_LSFT),KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,KC_FN0, \
-                               KC_FN5, KC_LCTL,                KC_FN2,                 KC_RGUI,KC_FN6),
+               KC_FN5, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_FN6, KC_FN0, \
+                               KC_LALT,KC_LCTL,                KC_FN2,                 KC_RGUI,KC_RALT),
 
     /* Layer 3: Mouse layer
      * ,-----------------------------------------------------------------------------------------.
@@ -157,10 +157,10 @@ const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_LAYER_MOMENTARY(HHKB),
     [1] = ACTION_FUNCTION(PSEUDO_US_FUNCTION),
     [2] = ACTION_LAYER_TAP_KEY(SPACE_FN, KC_SPACE),
-    [3] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_MHEN),
-    [4] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_HENK),
-    [5] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_LANG2),
-    [6] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_LANG1),
+    [3] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_MHEN),
+    [4] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_HENK),
+    [5] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_LANG2),
+    [6] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_LANG1),
     [7] = ACTION_DEFAULT_LAYER_SET(BASE),
     [8] = ACTION_DEFAULT_LAYER_SET(PSEUDO_US),
     [9] = ACTION_DEFAULT_LAYER_SET(MAC),
