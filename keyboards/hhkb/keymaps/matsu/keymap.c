@@ -57,20 +57,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------------.
      * | Esc | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 |     |     |
      * |-----------------------------------------------------------------------------------------|
-     * |        |     |     |     |     |     | MwL | MwD | MwU | MwR |     |     |     |        |
+     * |        | Mb1 | McU | Mb2 |     |     | MwL | MwD | MwU | MwR |     |     |     |        |
      * |-----------------------------------------------------------------------------------------|
-     * |          |     |     |     |     |     | McL | McD | McU | McR |     |     |            |
+     * |          | McL | McD | McR |     |     | McL | McD | McU | McR |     |     |            |
      * |-----------------------------------------------------------------------------------------|
-     * |             |     |     |     |     |     | Mb1 | Mb2 | Mb3 |     |     |         | Fn0 |
+     * |             |     | Mb3 |     |     |     | Mb1 | Mb2 | Mb3 |     |     |         | Fn0 |
      * `-----------------------------------------------------------------------------------------'
      *           |     |        |                Mb1                |        |     |
      *           `-----------------------------------------------------------------'
      */
     [MOUSE] =
         KEYMAP(KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_NO,  KC_NO, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_WH_L,KC_WH_D,KC_WH_U,KC_WH_R,KC_NO,  KC_NO,  KC_NO,  KC_TRNS, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,KC_NO,  KC_NO,  KC_TRNS, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_BTN1,KC_BTN2,KC_BTN3,KC_NO,  KC_NO,  KC_TRNS,KC_FN0, \
+               KC_TRNS,KC_BTN1,KC_MS_U,KC_BTN2,KC_NO,  KC_NO,  KC_WH_L,KC_WH_D,KC_WH_U,KC_WH_R,KC_NO,  KC_NO,  KC_NO,  KC_TRNS, \
+               KC_TRNS,KC_MS_L,KC_MS_D,KC_MS_R,KC_NO,  KC_NO,  KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,KC_NO,  KC_NO,  KC_TRNS, \
+               KC_TRNS,KC_NO,  KC_BTN3,KC_NO,  KC_NO,  KC_NO,  KC_BTN1,KC_BTN2,KC_BTN3,KC_NO,  KC_NO,  KC_TRNS,KC_FN0, \
                                KC_TRNS,KC_TRNS,                KC_BTN1,                KC_TRNS,KC_TRNS),
 
     /* Layer 4: Tenkey layer
@@ -117,20 +117,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------------.
      * |  `  | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | Ins |     |
      * |-----------------------------------------------------------------------------------------|
-     * |        | End | Up  | Hom |     |     |     | Hom | Up  | End | Psc | Slk | Pau |   Del  |
+     * |        | Hom | Up  | End |     |     |     | Hom | End |     | Psc | Slk | Pau |   Del  |
      * |-----------------------------------------------------------------------------------------|
-     * |          | Lef | Dow | Rig | PgU |     | PgU | Lef | Dow | Rig |     |     |            |
+     * |          | Lef | Dow | Rig | PgU |     | Lef | Dow | Up  | Rig |     |     |            |
      * |-----------------------------------------------------------------------------------------|
-     * |             |     |     | PgD |     | Spc | PgD |  `  |  ~  |     |     |         |     |
+     * |             |     |     | PgD |     | Spc |     | PgD | PgU |     |     |         |     |
      * `-----------------------------------------------------------------------------------------'
      *           |     |        |                                   |        |     |
      *           `-----------------------------------------------------------------'
      */
     [SPACE_FN] =
         KEYMAP(KC_GRV, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_INS,  KC_NO, \
-               KC_TRNS,KC_END, KC_UP,  KC_HOME,KC_NO,  KC_NO,  KC_NO,  KC_HOME,KC_UP,  KC_END, KC_PSCR,KC_SLCK,KC_PAUS,KC_DEL, \
-               KC_TRNS,KC_LEFT,KC_DOWN,KC_RGHT,KC_PGUP,KC_NO,  KC_PGUP,KC_LEFT,KC_DOWN,KC_RGHT,KC_NO,  KC_NO,  KC_TRNS, \
-               KC_TRNS,KC_NO,  KC_NO,  KC_PGDN,KC_NO,  KC_SPC, KC_PGDN,KC_GRV, KC_TILD, KC_NO,  KC_NO,  KC_TRNS,KC_NO, \
+               KC_TRNS,KC_HOME,KC_UP,  KC_END, KC_NO,  KC_NO,  KC_NO,  KC_HOME,KC_END, KC_NO,  KC_PSCR,KC_SLCK,KC_PAUS,KC_DEL, \
+               KC_TRNS,KC_LEFT,KC_DOWN,KC_RGHT,KC_PGUP,KC_NO,  KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,KC_NO,  KC_NO,  KC_TRNS, \
+               KC_TRNS,KC_NO,  KC_NO,  KC_PGDN,KC_NO,  KC_SPC, KC_NO,  KC_PGDN,KC_PGUP,KC_NO,  KC_NO,  KC_TRNS,KC_NO, \
                                KC_TRNS,KC_TRNS,                KC_TRNS,                KC_TRNS,KC_TRNS),
 };
 
