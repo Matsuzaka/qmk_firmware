@@ -164,7 +164,7 @@ RN-42 is configured as SPP device at factory reset, you need to configure it as 
     BTA=00066667BBE9
     BTName=TmkBT-BBE9
     Baudrt(SW4)=115K
-    Mode  =DTR 
+    Mode  =DTR
     Authen=1
     PinCod=1234
     Bonded=0
