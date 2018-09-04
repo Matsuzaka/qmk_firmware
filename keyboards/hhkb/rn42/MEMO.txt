@@ -14,7 +14,6 @@ Bug:
     - the reason is unclear - 12/08 NOT LOOK INTO ANY MORE
     - WORKAROUND: use serial pins(3.3V, GND, RX and TX)
         - SF,1 and R,1 to set factory defalult
-    
 
 Todo:
 - LED cover and switch knob and new Slide Switch
